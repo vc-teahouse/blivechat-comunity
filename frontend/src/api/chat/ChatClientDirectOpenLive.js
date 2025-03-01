@@ -206,7 +206,9 @@ export default class ChatClientDirectOpenLive extends ChatClientOfficialBase {
       content: data.msg,
       privilegeType: data.guard_level,
       isGiftDanmaku: chat.isGiftDanmakuByContent(data.msg),
+      medalName: data.fans_medal_name,
       medalLevel: data.fans_medal_wearing_status ? data.fans_medal_level : 0,
+      isFanGroup: data.fans_medal_wearing_status ? true : false,
       id: data.msg_id,
       emoticon: emoticon,
     })
@@ -224,7 +226,10 @@ export default class ChatClientDirectOpenLive extends ChatClientOfficialBase {
       totalCoin: data.paid ? totalCoin : 0,
       totalFreeCoin: !data.paid ? totalCoin : 0,
       giftName: data.gift_name,
-      num: data.gift_num
+      num: data.gift_num,
+      medalName: data.fans_medal_name,
+      medalLevel: data.fans_medal_wearing_status ? data.fans_medal_level : 0,
+      isFanGroup: data.fans_medal_wearing_status ? true : false,
     })
     this.msgHandler.onAddGift(data)
   }
@@ -236,7 +241,7 @@ export default class ChatClientDirectOpenLive extends ChatClientOfficialBase {
       avatarUrl: chat.processAvatarUrl(data.user_info.uface),
       timestamp: data.timestamp,
       authorName: data.user_info.uname,
-      privilegeType: data.guard_level
+      privilegeType: data.guard_level,
     })
     this.msgHandler.onAddMember(data)
   }
@@ -250,6 +255,9 @@ export default class ChatClientDirectOpenLive extends ChatClientOfficialBase {
       authorName: data.uname,
       price: data.rmb,
       content: data.message,
+      medalName: data.fans_medal_name,
+      medalLevel: data.fans_medal_wearing_status ? data.fans_medal_level : 0,
+      isFanGroup: data.fans_medal_wearing_status ? true : false,
     })
     this.msgHandler.onAddSuperChat(data)
   }
