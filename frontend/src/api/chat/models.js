@@ -75,12 +75,22 @@ export class AddMemberMsg {
     timestamp = new Date().getTime() / 1000,
     authorName = '',
     privilegeType = 1,
+    guardNum = 0,
+    guardUnit = '',
+    medalName = '',
+    medalLevel = 0,
+    isFanGroup = false,
   } = {}) {
     this.id = id
     this.avatarUrl = avatarUrl
     this.timestamp = timestamp
     this.authorName = authorName
     this.privilegeType = privilegeType
+    this.guardNum = guardNum
+    this.guardUnit = guardUnit
+    this.medalName = medalName
+    this.medalLevel = medalLevel
+    this.isFanGroup = isFanGroup
   }
 }
 

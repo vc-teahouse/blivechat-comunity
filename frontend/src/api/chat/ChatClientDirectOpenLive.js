@@ -242,6 +242,11 @@ export default class ChatClientDirectOpenLive extends ChatClientOfficialBase {
       timestamp: data.timestamp,
       authorName: data.user_info.uname,
       privilegeType: data.guard_level,
+      guardNum: data.guard_num,
+      guardUnit: data.guard_unit,
+      medalName: data.fans_medal_name,
+      medalLevel: data.fans_medal_level,
+      isFanGroup: data.fans_medal_wearing_status ? true : false,
     })
     this.msgHandler.onAddMember(data)
   }
