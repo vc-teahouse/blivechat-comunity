@@ -207,7 +207,7 @@ export default class ChatClientDirectOpenLive extends ChatClientOfficialBase {
       privilegeType: data.guard_level,
       isGiftDanmaku: chat.isGiftDanmakuByContent(data.msg),
       medalName: data.fans_medal_name,
-      medalLevel: data.fans_medal_wearing_status ? data.fans_medal_level : 0,
+      medalLevel: data.fans_medal_level,
       isFanGroup: data.fans_medal_wearing_status ? true : false,
       id: data.msg_id,
       emoticon: emoticon,
@@ -228,7 +228,7 @@ export default class ChatClientDirectOpenLive extends ChatClientOfficialBase {
       giftName: data.gift_name,
       num: data.gift_num,
       medalName: data.fans_medal_name,
-      medalLevel: data.fans_medal_wearing_status ? data.fans_medal_level : 0,
+      medalLevel: data.fans_medal_level,
       isFanGroup: data.fans_medal_wearing_status ? true : false,
     })
     this.msgHandler.onAddGift(data)
@@ -256,7 +256,7 @@ export default class ChatClientDirectOpenLive extends ChatClientOfficialBase {
       price: data.rmb,
       content: data.message,
       medalName: data.fans_medal_name,
-      medalLevel: data.fans_medal_wearing_status ? data.fans_medal_level : 0,
+      medalLevel: data.fans_medal_level,
       isFanGroup: data.fans_medal_wearing_status ? true : false,
     })
     this.msgHandler.onAddSuperChat(data)
